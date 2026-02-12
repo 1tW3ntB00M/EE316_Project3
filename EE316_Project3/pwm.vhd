@@ -1,0 +1,59 @@
+-- Source: http://academic.csuohio.edu/chu_p/rtl/fpga_vhdl.html
+-- Listing 4.10
+-- modified: added port "clk_en", Sept 5, 2013
+-- modified: added upper and lower limits of the counter, Sept 1, 2016
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity pwm_gen is
+   generic(N: integer := 8; N2: integer := 255);
+   port(
+		clk 			: in std_logic;
+		reset			: in std_logic;
+		AIN0_data       : in std_logic; --Jumper P5 Light Dependant Resistor
+        AIN1_data       : in std_logic; --Jumper P4 Thermister(TEMP)
+        AIN3_data       : in std_logic; --Jumper P6 Potentiometer (POT)
+		pwm_out		    : out std_logic
+   );
+end pwm_gen;
+
+architecture logic of pwm_gen is
+
+	 signal count_val   : STD_LOGIC_VECTOR(N-1 downto 0);
+     signal counter 	: integer range 0 to N2 := 0;
+	 --signal sram_top	: std_logic_vector(N-1 downto 0);
+	 signal pwm			: std_logic;
+	 
+begin
+
+   
+    inst_counter: process(clk, reset)
+    begin
+        if reset = '1' then
+            counter <= 0;
+        elsif rising_edge(clk) then
+				if counter < N2 then
+					counter <= counter + 1;  -- Increment by 1
+				else 
+					counter <= 0;
+				end if;
+        end if;
+    end process;
+
+    count_val <= std_logic_vector(to_unsigned(counter, N));
+	 --sram_top  <= sram_data(15 downto 15-(N-1));
+	 pwm_out   <= pwm;
+	 
+	 inst_pwm_logic: process(clk,reset)
+	 begin
+		 if reset = '1' then
+			  pwm <= '0';
+		 elsif rising_edge(clk) then
+			    pwm <= '1';
+		 end if;
+	 end process;
+		
+end logic;
+		
