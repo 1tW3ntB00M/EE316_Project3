@@ -37,8 +37,8 @@ entity Top_Level is
     Btn0   : in std_logic;
     Btn1   : in std_logic;
     ck_scl : inout std_logic;
-    ck_sda : inout std_logic
-    
+    ck_sda : inout std_logic;
+    o2Lowp : out std_logic
   );
 end Top_Level;
 
@@ -61,7 +61,28 @@ GENERIC (
 			  PULSE_O   : out STD_LOGIC);
 end component;
 
-begin
+signal Reset_Master  : std_logic;
+signal Reset         : std_logic;
+signal Btn0_db       : std_logic;
 
+begin
+Reset_Master <= Reset or not Btn0_db;
+
+inst_Reset_Delay : Reset_Delay
+PORT map (
+         iCLK    => iCLK,	
+         oRESET  => Reset
+			);
+
+inst_key_0_db : btn_debounce_toggle
+GENERIC map (
+	 CNTR_MAX => X"FFFF") --"FFFF" for running "0004" fopr sim
+    Port map ( 
+        BTN_I 	  => Btn0,
+        CLK 	  => iCLK,
+        BTN_O 	  => Btn0_db,
+        TOGGLE_O  => open,
+	    PULSE_O   => open
+			  );
 
 end Structural;
