@@ -38,7 +38,11 @@ entity Top_Level is
     Btn1   : in std_logic;
     ck_scl : inout std_logic;
     ck_sda : inout std_logic;
-    o2Lowp : out std_logic
+    o2Lowp : out std_logic;
+    --PCF8591 Out
+    AIN0   : in std_logic; --Jumper P5 Light Dependant Resistor
+    AIN1   : in std_logic; --Jumper P4 Thermister(TEMP)
+    AIN3   : in std_logic --Jumper P6 Potentiometer (POT)
   );
 end Top_Level;
 
