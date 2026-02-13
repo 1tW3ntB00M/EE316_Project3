@@ -47,6 +47,9 @@ entity Top_Level is
     --I2C
     ck_scl : inout std_logic;
     ck_sda : inout std_logic;
+    --ON board LED
+    led0_b : out std_logic;
+    led1_g : out std_logic;
     --PWM
     o2Lowp : out std_logic;
     --PCF8591 Out
@@ -76,10 +79,11 @@ GENERIC (
 end component;
 
 component pwm_gen is
-   generic(N: integer := 8; N2: integer := 255);
+   generic(Data_Size: integer := 8; Cnt2: integer := 255);
    port(
 		clk 			: in std_logic;
 		reset			: in std_logic;
+		PWM_Mode        : in std_logic;
 		AIN0_data       : in std_logic; --Jumper P5 Light Dependant Resistor
         AIN1_data       : in std_logic; --Jumper P4 Thermister(TEMP)
         AIN3_data       : in std_logic; --Jumper P6 Potentiometer (POT)
@@ -94,6 +98,7 @@ component ModeSM_P3 is
         Btn1                : in std_logic;
         Btn2                : in std_logic;
         Btn3                : in std_logic;
+        PWM_Mode            : out std_logic;
         LED0                : out std_logic;
         LED1                : out std_logic;
         LED2                : out std_logic;
@@ -117,12 +122,19 @@ end component;
 signal Reset_Master  : std_logic;
 signal Reset         : std_logic;
 signal Btn0_db       : std_logic;
-signal Btn1_db       : std_logic;
+--signal Btn1_db       : std_logic;
+signal Btn1_p        : std_logic;
 signal Btn2_db       : std_logic;
 signal Btn3_db       : std_logic;
+signal PWMmode       : std_logic;
+signal oPWM          : std_logic;
 
 begin
 Reset_Master <= Reset or Btn0_db;
+led0_b       <= PWMmode;
+o2Lowp       <= oPWM;
+led1_g       <= oPWM;
+
 
 inst_Reset_Delay : Reset_Delay
 PORT map (
@@ -147,9 +159,9 @@ GENERIC map (
     Port map ( 
         BTN_I 	  => Btn1,
         CLK 	  => iCLK,
-        BTN_O 	  => Btn1_db,
+        BTN_O 	  => open,
         TOGGLE_O  => open,
-	    PULSE_O   => open
+	    PULSE_O   => Btn1_p
 			  );
 			  
 inst_Btn2_db : btn_debounce_toggle
@@ -174,27 +186,29 @@ GENERIC map (
 	    PULSE_O   => open
 			  );
 			  
-inst_key_0_db : pwm_gen
+inst_PWM : pwm_gen
 GENERIC map (
-	 N  => 8,
-	 N2 => 255
+	 Data_Size  => 8,
+	 Cnt2 => 255
 	 ) --"FFFF" for running "0004" fopr sim
     Port map ( 
         clk 			=> iClk,
 		reset			=> Reset_Master,
+		PWM_Mode        => PWMmode,
 		AIN0_data       => AIN0, --Light Dependant Resistor
         AIN1_data       => AIN1, --Thermister(TEMP)
         AIN3_data       => AIN3, --Jumper P6 Potentiometer (POT)
-		pwm_out		    => o2Lowp
+		pwm_out		    => oPWM
 			  );
 			  
 inst_MODE_SM : ModeSM_P3
 Port map( 
     iClk				=> iClk,
 	Reset		    	=> Reset_Master,
-    Btn1                => Btn1_db,
+    Btn1                => Btn1_p,
     Btn2                => Btn2_db,
     Btn3                => Btn3_db,
+    PWM_Mode            => PWMmode,
     LED0                => LED0,
     LED1                => LED1,
     LED2                => LED2,

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Joshua Smith
 -- 
 -- Create Date: 02/12/2026 01:43:11 PM
 -- Design Name: 
@@ -38,6 +38,7 @@ entity ModeSM_P3 is
         Btn1                : in std_logic;
         Btn2                : in std_logic;
         Btn3                : in std_logic;
+        PWM_Mode            : out std_logic;
         LED0                : out std_logic;
         LED1                : out std_logic;
         LED2                : out std_logic;
@@ -72,13 +73,14 @@ process(iCLK)
 			else		
 				case MODE is 
 					when Init =>
-					   LED0 <= '0';
-					   LED1 <= '0';
-					   LED2 <= '0';
-					   LED3 <= '0';
-                       MODE <= LDR;
+					   LED0     <= '0';
+					   LED1     <= '0';
+					   LED2     <= '0';
+					   LED3     <= '0';
+					   PWM_Mode <= '0';
+                       MODE     <= LDR;
 					when LDR =>
-					   LED0 <= '1';
+					   LED0  <= '1';
 					   if Btn1 = '1' then
 					       LED0 <= '0';
 					       LED1 <= '1';
@@ -89,19 +91,21 @@ process(iCLK)
 					   
 					when TEMP =>
 					   if Btn1 = '1' then
-					       LED0 <= '0';
-					       LED1 <= '0';
-					       LED2 <= '1';
-					       LED3 <= '0';
+					       LED0     <= '0';
+					       LED1     <= '0';
+					       LED2     <= '1';
+					       LED3     <= '0';
+					       PWM_Mode <= '1';
 					       MODE <= POT;
 					   end if; 
 					
 					when POT =>
 					   if Btn1 = '1' then
-					       LED0 <= '0';
-					       LED1 <= '0';
-					       LED2 <= '0';
-					       LED3 <= '1';
+					       LED0     <= '0';
+					       LED1     <= '0';
+					       LED2     <= '0';
+					       LED3     <= '1';
+					       PWM_Mode <= '0';
 					       MODE <= AMP;
 					   end if; 
 					

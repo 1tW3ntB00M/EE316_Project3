@@ -1,0 +1,87 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Feb 13 16:00:26 2026
+| Host         : CB195-UL-32 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Level_control_sets_placed.rpt
+| Design       : Top_Level
+| Device       : xc7z007s
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     9 |
+|    Minimum number of control sets                        |     9 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    34 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     9 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            2 |
+| No           | No                    | Yes                    |               2 |            1 |
+| No           | Yes                   | No                     |              32 |            8 |
+| Yes          | No                    | No                     |              25 |            8 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               5 |            1 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+|   Clock Signal  |              Enable Signal              |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++-----------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+|  iClk_IBUF_BUFG | inst_MODE_SM/LED0_i_1_n_0               |                                        |                1 |              1 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/PWM_Mode_i_1_n_0           |                                        |                1 |              1 |
+|  iClk_IBUF_BUFG |                                         | inst_Reset_Delay/SR[0]                 |                1 |              2 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/LED1_i_1_n_0               |                                        |                1 |              3 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/FSM_onehot_MODE[4]_i_2_n_0 | inst_Reset_Delay/SR[0]                 |                1 |              5 |
+|  iClk_IBUF_BUFG |                                         |                                        |                2 |              6 |
+|  iClk_IBUF_BUFG |                                         | inst_Btn0_db_Reset/btn_cntr[0]_i_1_n_0 |                4 |             16 |
+|  iClk_IBUF_BUFG |                                         | inst_Btn1_db/btn_cntr[0]_i_1__0_n_0    |                4 |             16 |
+|  iClk_IBUF_BUFG | inst_Reset_Delay/sel                    |                                        |                5 |             20 |
++-----------------+-----------------------------------------+----------------------------------------+------------------+----------------+
+
+
