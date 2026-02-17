@@ -61,6 +61,21 @@ end Top_Level;
 
 architecture Structural of Top_Level is
 
+signal state_duty           : std_logic_vector(3 downto 0);
+signal state_clock          : std_logic;
+signal adc_data             : std_logic_vector(7 downto 0);
+signal adc_ready            : std_logic;
+
+component i2c_user_logic is 
+    PORT(
+    clk             : IN     STD_LOGIC;                    --system clock
+    btn_in          : IN     std_logic_vector(3 downto 0); 
+    sda             : INOUT  STD_LOGIC;                    --serial data output of i2c bus
+    scl             : INOUT  STD_LOGIC;                   --serial clock output of i2c bus
+    data_read       : out    std_logic_vector(7 downto 0);
+    dataready       : out    std_logic);
+END component;
+
 component Reset_Delay IS	
     PORT (
         SIGNAL iCLK : IN std_logic;	
@@ -135,7 +150,16 @@ led0_b       <= PWMmode;
 o2Lowp       <= oPWM;
 led1_g       <= oPWM;
 
-
+inst_i2c_user_logic : i2c_user_logic
+    PORT map (
+        clk            => iclk,
+        btn_in         => state_duty,
+        sda            => ck_sda,
+        scl            => ck_scl,
+        data_read      => adc_data,
+        dataready      => adc_ready
+              );
+              
 inst_Reset_Delay : Reset_Delay
 PORT map (
          iCLK    => iCLK,	
