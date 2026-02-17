@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Feb 13 16:00:39 2026
+| Date             : Tue Feb 17 13:13:17 2026
 | Host             : CB195-UL-32 running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Level_power_routed.rpt -pb Top_Level_power_summary_routed.pb -rpx Top_Level_power_routed.rpx
 | Design           : Top_Level
@@ -52,13 +52,13 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      123 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       30 |     14400 |            0.21 |
-|   CARRY4       |    <0.001 |       13 |      4400 |            0.30 |
-|   Register     |    <0.001 |       70 |     28800 |            0.24 |
-|   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |    <0.001 |      105 |       --- |             --- |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      163 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       42 |     14400 |            0.29 |
+|   CARRY4       |    <0.001 |       20 |      4400 |            0.45 |
+|   Register     |    <0.001 |       90 |     28800 |            0.31 |
+|   Others       |     0.000 |       10 |       --- |             --- |
+| Signals        |    <0.001 |      130 |       --- |             --- |
 | I/O            |    <0.001 |       10 |       100 |           10.00 |
 | Static Power   |     0.093 |          |           |                 |
 | Total          |     0.094 |          |           |                 |

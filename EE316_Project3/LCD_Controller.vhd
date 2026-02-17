@@ -6,18 +6,18 @@ use ieee.numeric_std.all;
 
 ENTITY LCD_Controller IS
     PORT (
-        Reset        	: IN std_logic;
-        Data         	: IN std_logic_vector(15 DOWNTO 0);
-		  Address			: IN std_logic_vector(7 downto 0);
-        iclk          	: IN std_logic;
-        LCD_RS, LCD_EN 	: OUT std_logic;
+        Reset        	    : IN std_logic;
+        Data         	    : IN std_logic_vector(15 DOWNTO 0);
+		Address			    : IN std_logic_vector(7 downto 0);
+        iclk          	    : IN std_logic;
+        LCD_RS, LCD_EN 	    : OUT std_logic;
         LCD_DATA			: OUT std_logic_vector(7 DOWNTO 0);
-		  clk_en				: in std_logic;
-		  state_in			: in std_logic_vector(3 downto 0);
-		  Hz_state			: in std_logic_vector(3 downto 0);
-		  blon				: out std_logic;
-		  rw					: out std_logic;
-		  LCDon				: out std_logic
+		clk_en				: in std_logic;
+	    state_in			: in std_logic_vector(3 downto 0);
+		Hz_state			: in std_logic_vector(3 downto 0);
+		blon				: out std_logic;
+		rw					: out std_logic;
+		LCDon				: out std_logic
      );
 END LCD_Controller;
 

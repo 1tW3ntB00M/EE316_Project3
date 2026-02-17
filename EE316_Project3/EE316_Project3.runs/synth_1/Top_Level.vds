@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Feb 13 15:58:57 2026
-# Process ID: 6848
+# Start of session at: Tue Feb 17 13:11:33 2026
+# Process ID: 17004
 # Current directory: U:/EE316_Project3/EE316_Project3.runs/synth_1
 # Command line: vivado.exe -log Top_Level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Level.tcl
 # Log file: U:/EE316_Project3/EE316_Project3.runs/synth_1/Top_Level.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1696 
+INFO: Helper process launched with PID 7312 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 720.125 ; gain = 178.668
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 720.457 ; gain = 177.926
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top_Level' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:62]
 INFO: [Synth 8-3491] module 'Reset_Delay' declared at 'U:/EE316_Project3/Reset_Delay.vhd:8' bound to instance 'inst_Reset_Delay' of component 'Reset_Delay' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:139]
@@ -35,28 +35,29 @@ INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316_Project3
 INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316_Project3/btn_debounce.vhd:32' bound to instance 'inst_Btn2_db' of component 'btn_debounce_toggle' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:167]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
 INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316_Project3/btn_debounce.vhd:32' bound to instance 'inst_Btn3_db' of component 'btn_debounce_toggle' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:178]
-	Parameter N bound to: 8 - type: integer 
-	Parameter N2 bound to: 255 - type: integer 
+WARNING: [Synth 8-5640] Port 'adc' is missing in component declaration [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:81]
+	Parameter Data_Size bound to: 8 - type: integer 
+	Parameter Cnt2 bound to: 255 - type: integer 
 INFO: [Synth 8-3491] module 'pwm_gen' declared at 'U:/EE316_Project3/pwm.vhd:10' bound to instance 'inst_PWM' of component 'pwm_gen' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:189]
-INFO: [Synth 8-638] synthesizing module 'pwm_gen' [U:/EE316_Project3/pwm.vhd:23]
-	Parameter N bound to: 8 - type: integer 
-	Parameter N2 bound to: 255 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [U:/EE316_Project3/pwm.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'pwm_gen' (3#1) [U:/EE316_Project3/pwm.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'pwm_gen' [U:/EE316_Project3/pwm.vhd:24]
+	Parameter Data_Size bound to: 8 - type: integer 
+	Parameter Cnt2 bound to: 255 - type: integer 
+WARNING: [Synth 8-506] null port 'ADC' ignored [U:/EE316_Project3/pwm.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [U:/EE316_Project3/pwm.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'pwm_gen' (3#1) [U:/EE316_Project3/pwm.vhd:24]
 INFO: [Synth 8-3491] module 'ModeSM_P3' declared at 'U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/ModeSM_P3.vhd:34' bound to instance 'inst_MODE_SM' of component 'ModeSM_P3' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:204]
 INFO: [Synth 8-638] synthesizing module 'ModeSM_P3' [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/ModeSM_P3.vhd:49]
 INFO: [Synth 8-256] done synthesizing module 'ModeSM_P3' (4#1) [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/ModeSM_P3.vhd:49]
 INFO: [Synth 8-256] done synthesizing module 'Top_Level' (5#1) [U:/EE316_Project3/EE316_Project3.srcs/sources_1/new/Top_Level.vhd:62]
 WARNING: [Synth 8-3331] design ModeSM_P3 has unconnected port Btn2
 WARNING: [Synth 8-3331] design ModeSM_P3 has unconnected port Btn3
-WARNING: [Synth 8-3331] design pwm_gen has unconnected port PWM_Mode
 WARNING: [Synth 8-3331] design pwm_gen has unconnected port AIN0_data
 WARNING: [Synth 8-3331] design pwm_gen has unconnected port AIN1_data
 WARNING: [Synth 8-3331] design pwm_gen has unconnected port AIN3_data
 WARNING: [Synth 8-3331] design Top_Level has unconnected port ck_scl
 WARNING: [Synth 8-3331] design Top_Level has unconnected port ck_sda
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 784.500 ; gain = 243.043
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 784.633 ; gain = 242.102
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -69,10 +70,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.500 ; gain = 243.043
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.633 ; gain = 242.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.500 ; gain = 243.043
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.633 ; gain = 242.102
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -84,26 +85,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 904.605 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 905.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 904.605 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 905.797 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'MODE_reg' in module 'ModeSM_P3'
 ---------------------------------------------------------------------------------------------------
@@ -117,7 +118,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'MODE_reg' in module 'ModeSM
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'MODE_reg' using encoding 'one-hot' in module 'ModeSM_P3'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -132,8 +133,9 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
+	               32 Bit    Registers := 1     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 20    
 +---Muxes : 
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 4     
@@ -161,7 +163,8 @@ Detailed RTL Component Info :
 Module pwm_gen 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 Module ModeSM_P3 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -190,8 +193,39 @@ WARNING: [Synth 8-3331] design Top_Level has unconnected port ck_sda
 WARNING: [Synth 8-3331] design Top_Level has unconnected port AIN0
 WARNING: [Synth 8-3331] design Top_Level has unconnected port AIN1
 WARNING: [Synth 8-3331] design Top_Level has unconnected port AIN3
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[0]' (FDSE) to 'inst_PWM/N_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[1]' (FDSE) to 'inst_PWM/N_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[2]' (FDRE) to 'inst_PWM/N_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[3]' (FDSE) to 'inst_PWM/N_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[4]' (FDSE) to 'inst_PWM/N_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[5]' (FDRE) to 'inst_PWM/N_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[6]' (FDRE) to 'inst_PWM/N_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[7]' (FDRE) to 'inst_PWM/N_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[8]' (FDSE) to 'inst_PWM/N_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[9]' (FDRE) to 'inst_PWM/N_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[10]' (FDRE) to 'inst_PWM/N_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[11]' (FDRE) to 'inst_PWM/N_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[12]' (FDRE) to 'inst_PWM/N_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[13]' (FDRE) to 'inst_PWM/N_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[15]' (FDRE) to 'inst_PWM/N_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[16]' (FDRE) to 'inst_PWM/N_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[17]' (FDRE) to 'inst_PWM/N_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[18]' (FDRE) to 'inst_PWM/N_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[19]' (FDRE) to 'inst_PWM/N_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[20]' (FDRE) to 'inst_PWM/N_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[21]' (FDRE) to 'inst_PWM/N_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[22]' (FDRE) to 'inst_PWM/N_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[23]' (FDRE) to 'inst_PWM/N_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[24]' (FDRE) to 'inst_PWM/N_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[25]' (FDRE) to 'inst_PWM/N_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[26]' (FDRE) to 'inst_PWM/N_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[27]' (FDRE) to 'inst_PWM/N_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[28]' (FDRE) to 'inst_PWM/N_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[29]' (FDRE) to 'inst_PWM/N_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst_PWM/N_reg[30]' (FDRE) to 'inst_PWM/N_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_PWM/N_reg[31] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -203,13 +237,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -221,7 +255,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 904.605 ; gain = 363.148
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 905.797 ; gain = 363.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -245,7 +279,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -258,7 +292,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -270,25 +304,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -305,53 +339,52 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    13|
-|3     |LUT1   |     3|
+|2     |CARRY4 |    20|
+|3     |LUT1   |     4|
 |4     |LUT2   |     6|
-|5     |LUT3   |     3|
-|6     |LUT4   |     9|
-|7     |LUT5   |     6|
+|5     |LUT3   |     6|
+|6     |LUT4   |    15|
+|7     |LUT5   |     7|
 |8     |LUT6   |     5|
-|9     |FDCE   |     1|
-|10    |FDRE   |    67|
-|11    |FDSE   |     1|
-|12    |IBUF   |     3|
-|13    |OBUF   |     7|
+|9     |FDRE   |    88|
+|10    |FDSE   |     1|
+|11    |IBUF   |     3|
+|12    |OBUF   |     7|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------------------+----------------------+------+
 |      |Instance             |Module                |Cells |
 +------+---------------------+----------------------+------+
-|1     |top                  |                      |   125|
+|1     |top                  |                      |   163|
 |2     |  inst_Btn0_db_Reset |btn_debounce_toggle   |    28|
 |3     |  inst_Btn1_db       |btn_debounce_toggle_0 |    32|
-|4     |  inst_MODE_SM       |ModeSM_P3             |    20|
-|5     |  inst_PWM           |pwm_gen               |     1|
+|4     |  inst_MODE_SM       |ModeSM_P3             |    21|
+|5     |  inst_PWM           |pwm_gen               |    38|
 |6     |  inst_Reset_Delay   |Reset_Delay           |    33|
 +------+---------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 908.539 ; gain = 246.977
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 908.539 ; gain = 367.082
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 910.656 ; gain = 246.961
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 910.656 ; gain = 368.125
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 925.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 930.945 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-31 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 925.316 ; gain = 630.539
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 925.316 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 930.945 ; gain = 636.797
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 930.945 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'U:/EE316_Project3/EE316_Project3.runs/synth_1/Top_Level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Level_utilization_synth.rpt -pb Top_Level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 13 15:59:35 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 17 13:12:11 2026...

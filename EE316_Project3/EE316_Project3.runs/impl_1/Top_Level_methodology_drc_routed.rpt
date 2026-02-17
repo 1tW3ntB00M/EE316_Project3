@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Feb 13 16:00:38 2026
+| Date         : Tue Feb 17 13:13:17 2026
 | Host         : CB195-UL-32 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Top_Level_methodology_drc_routed.rpt -pb Top_Level_methodology_drc_routed.pb -rpx Top_Level_methodology_drc_routed.rpx
 | Design       : Top_Level
@@ -23,21 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 10
+             Violations found: 9
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
 | TIMING-18 | Warning  | Missing input or output delay | 9          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-LUTAR-1#1 Warning
-LUT drives async reset alert  
-LUT cell inst_Reset_Delay/FSM_onehot_MODE[4]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) inst_PWM/pwm_reg/CLR, inst_PWM/pwm_reg_lopt_replica/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on Btn0 relative to clock(s) sys_clk_pin
