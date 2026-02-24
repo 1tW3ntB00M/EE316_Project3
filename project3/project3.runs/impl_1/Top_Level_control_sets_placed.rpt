@@ -1,0 +1,92 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Feb 24 14:19:21 2026
+| Host         : CB195-UL-31 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Level_control_sets_placed.rpt
+| Design       : Top_Level
+| Device       : xc7z007s
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    14 |
+|    Minimum number of control sets                        |    14 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    49 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    14 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     2 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              20 |           13 |
+| No           | No                    | Yes                    |              23 |           10 |
+| No           | Yes                   | No                     |              49 |           13 |
+| Yes          | No                    | No                     |              31 |           10 |
+| Yes          | No                    | Yes                    |               9 |            4 |
+| Yes          | Yes                   | No                     |              19 |            5 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------+-------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+|   Clock Signal  |               Enable Signal               |                         Set/Reset Signal                        | Slice Load Count | Bel Load Count |
++-----------------+-------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+|  iClk_IBUF_BUFG | inst_MODE_SM/LED01_out                    |                                                                 |                1 |              1 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/PWM_Mode2_out                |                                                                 |                1 |              1 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/LED1_i_1_n_0                 |                                                                 |                1 |              3 |
+|  iClk_IBUF_BUFG | inst_MODE_SM/FSM_onehot_MODE[4]_i_2_n_0   | inst_Reset_Delay/AR[0]                                          |                1 |              5 |
+|  iClk_IBUF_BUFG | inst_i2c_user_logic/cont[13]_i_2_n_0      |                                                                 |                2 |              6 |
+|  iClk_IBUF_BUFG |                                           | inst_Reset_Delay/AR[0]                                          |                2 |              8 |
+|  iClk_IBUF_BUFG | inst_i2c_user_logic/inst_i2c_master/busy1 | inst_i2c_user_logic/inst_i2c_master/FSM_onehot_state[8]_i_3_n_0 |                4 |              9 |
+|  iClk_IBUF_BUFG | inst_i2c_user_logic/cont[13]_i_2_n_0      | inst_i2c_user_logic/cont[13]_i_1_n_0                            |                4 |             14 |
+|  iClk_IBUF_BUFG |                                           | inst_i2c_user_logic/inst_i2c_master/FSM_onehot_state[8]_i_3_n_0 |                8 |             15 |
+|  iClk_IBUF_BUFG |                                           | inst_Btn0_db_Reset/btn_cntr[0]_i_1_n_0                          |                4 |             16 |
+|  iClk_IBUF_BUFG |                                           | inst_Btn1_db/btn_cntr[0]_i_1__0_n_0                             |                4 |             16 |
+|  iClk_IBUF_BUFG |                                           | inst_Clk_Gen/clk_cnt[0]_i_1_n_0                                 |                5 |             17 |
+|  iClk_IBUF_BUFG |                                           |                                                                 |               13 |             20 |
+|  iClk_IBUF_BUFG | inst_Reset_Delay/sel                      |                                                                 |                5 |             20 |
++-----------------+-------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+
+
